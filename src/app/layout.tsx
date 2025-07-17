@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,17 +28,27 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <nav style={{
           display: 'flex',
+          alignItems: 'center',
           gap: '2rem',
-          padding: '2rem 0 1.5rem 0',
+          padding: '0.5rem 0',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          background: 'white',
+          zIndex: '1000',
           justifyContent: 'center',
           fontWeight: 500,
           fontSize: '1.1rem',
           letterSpacing: '-0.01em',
         }}>
-          <Link href="/">Home</Link>
-          <Link href="/speaker">Become a Speaker</Link>
-          <Link href="/sessions">Upcoming Sessions</Link>
-          <Link href="/register">Register</Link>
+          <a href="#">
+            <Image src="logo.svg" alt="Coffe to Career's logo, a round circle with a dog that's sipping coffee in the center" width={96} height={96} />
+          </a>
+          <a href="#welcome">Who we are</a>
+          <a href="#sessions">Upcoming Sessions</a>
+          <a href="#speaker">Become a Speaker</a>
+          <a href="#community">Join the Community</a>
         </nav>
         {children}
       </body>
