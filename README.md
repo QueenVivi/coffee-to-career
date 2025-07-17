@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Coffee to Career
+
+Empowering future tech professionals to be job-ready. Coffee to Career meetup website.
 
 ## Getting Started
 

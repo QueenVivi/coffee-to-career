@@ -3,93 +3,36 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main style={{
+      maxWidth: 700,
+      margin: '0 auto',
+      padding: '3rem 1rem',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2.5rem',
+    }}>
+      <section>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>Welcome to Coffee to Career!</h1>
+        <p style={{ fontSize: '1.2rem', lineHeight: 1.7 }}>
+          Coffee to Career is a community-driven meetup designed to empower the next generation of tech professionals. Whether you’re a university student, making a career switch, or just starting out in tech, we’re here to help you become job-ready.
+        </p>
+      </section>
+      <section>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem' }}>Who is this for?</h2>
+        <ul style={{ fontSize: '1.1rem', lineHeight: 1.7, paddingLeft: '1.2rem' }}>
+          <li>University students exploring tech careers</li>
+          <li>Career changers looking to break into tech</li>
+          <li>Junior professionals wanting to level up</li>
+        </ul>
+      </section>
+      <section>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem' }}>What do we do?</h2>
+        <ul style={{ fontSize: '1.1rem', lineHeight: 1.7, paddingLeft: '1.2rem' }}>
+          <li>Host regular sessions on coding, technical topics, and interview prep</li>
+          <li>Bring in speakers from the industry to share real-world advice</li>
+          <li>Build a supportive network for learning and growth</li>
+        </ul>
+      </section>
+    </main>
   );
 }
