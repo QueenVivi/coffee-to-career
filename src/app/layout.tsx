@@ -43,7 +43,7 @@ export default function RootLayout({
           letterSpacing: '-0.01em',
         }}>
           <a href="#">
-            <Image src="logo.svg" alt="Coffe to Career's logo, a round circle with a dog that's sipping coffee in the center" width={96} height={96} />
+            <Image src="/logo.svg" alt="Coffee to Career's logo, a round circle with a dog that's sipping coffee in the center" width={96} height={96} />
           </a>
           <a href="#welcome">Who we are</a>
           <a href="#sessions">Upcoming Sessions</a>
