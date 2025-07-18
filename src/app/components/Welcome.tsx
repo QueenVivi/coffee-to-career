@@ -1,20 +1,37 @@
+"use client";
+import { useState, useEffect } from 'react'
 import Image from "next/image";
 
-const Welcome = () => (
-  <section id="welcome">
+
+const Welcome = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (<section id="welcome">
     <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>Welcome to Coffee to Career!</h1>
     <p style={{ fontSize: '1.2rem', lineHeight: 1.7 }}>
       Coffee to Career is a community-driven meetup designed to empower the next generation of tech professionals. Whether you’re a university student, making a career switch, or just starting out in tech, we’re here to help you become job-ready.
     </p>
     <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: '0.5rem 0' }}>Who are we?</h2>
-    <div style={{display: 'flex', width: '100%' }}>
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-        <p style={{ fontSize: '1.2rem', lineHeight: 1.7 }}>Viv and Oly are a couple who both work in tech. Viv is a career changer from education background, now works as a Full-stack engineer at REA group.</p>
-        <p style={{ fontSize: '1.2rem', lineHeight: 1.7 }}>Oly is an experienced Product Designer who also loves coding, and now works at Canva.</p> 
-        <p style={{ fontSize: '1.2rem', lineHeight: 1.7 }}>Their daughter, Zoe, sometimes comes and helps running the event. She is a great vibe buddy. Although, Mango might disagree, as some attendees do enjoy his presence.</p>
+    <div style={{flex: isMobile ? '1 1 100%' : '0 0 60%', display: 'flex', width: '100%', alignItems: 'flex-start', gap: '1rem' }}>
+      <div style={{ flex: '0 0 60%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <p style={{ fontSize: '1.2rem', lineHeight: 1.7, marginBottom: '0.5rem' }}>Viv and Oly are a couple who both work in tech. Viv is a career changer from education background, now works as a Full-stack engineer at REA group.</p>
+        <p style={{ fontSize: '1.2rem', lineHeight: 1.7, marginBottom: '0.5rem' }}>Oly is an experienced Product Designer who also loves coding, and now works at Canva.</p> 
+        <p style={{ fontSize: '1.2rem', lineHeight: 1.7, marginBottom: '0.5rem' }}>Their daughter, Zoe, sometimes comes and helps running the event. She is a great vibe buddy. Although, Mango might disagree, as some attendees do enjoy his presence.</p>
       </div>
-      <div  style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <Image src="/founders.jpg" alt="Coffee to Career's logo, a round circle with a dog that's sipping coffee in the center" width={300} height={400} style={{ borderRadius: '12px' }}/>
+      <div  style={{ flex: '0 0 40%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <Image src="/founders.jpg" alt="Coffee to Career's logo, a round circle with a dog that's sipping coffee in the center" width={260} height={320} style={{ borderRadius: '12px' }}/>
       </div>
     </div>
     <h2 style={{ fontSize: '1.5rem', fontWeight: 600, margin: '0.5rem 0' }}>Who is this for?</h2>
@@ -31,6 +48,7 @@ const Welcome = () => (
       <li>Build a supportive network for learning and growth</li>
     </ul>
   </section>
-)
+);
+}
 
 export default Welcome;
