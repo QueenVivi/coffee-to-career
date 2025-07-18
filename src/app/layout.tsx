@@ -42,7 +42,7 @@ export default function RootLayout({
           fontSize: '1.1rem',
           letterSpacing: '-0.01em',
         }}>
-          <a href="#">
+          <a href="#" className="hover:animate-spin">
             <Image src="/logo.svg" alt="Coffee to Career's logo, a round circle with a dog that's sipping coffee in the center" width={96} height={96} />
           </a>
           <a href="#welcome">Who we are</a>

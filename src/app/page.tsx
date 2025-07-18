@@ -7,20 +7,27 @@ import Community from "./components/Community";
 
 export default function Home() {
   return (
-    <main style={{
-      maxWidth: 700,
-      margin: '6rem auto',
-      padding: '3rem 1rem',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '2.5rem',
-    }}>
-      <section>
-       <Welcome />
-       <Sessions />
-       <Speaker />
-       <Community />
-      </section>
-    </main>
+    <>
+      <main style={{
+        maxWidth: 700,
+        margin: '6rem auto',
+        padding: '3rem 1rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2.5rem',
+      }}>
+        <section>
+        <Welcome />
+        <Sessions />
+        <Speaker />
+        <Community />
+        </section>
+      </main>
+      <footer>
+        <p className="text-gray-500 text-sm text-center ">
+        ©2025 Coffee to Career. All rights reserved.
+      </p>
+      </footer>
+    </>
   );
 }
